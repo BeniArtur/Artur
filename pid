@@ -1,0 +1,23 @@
+static int pid_output(void){
+double eroare= 0;
+int output;
+int T_curent=50;
+int Tset=50;
+static int s_erori=0;
+float Kp=10;
+float Ki=0.03;
+float kd = 0.1;
+double eroare_anterioara = 0;
+double derivativa = 0;
+double dt; 
+void loop
+{
+
+    eroare = Tset - T_curent;
+    s_erori= s_erori + eroare * dt;
+    derivativa = (eroare - eroare_anterioara) / dt;
+    output = (kp * eroare) + (ki * suma_erori ) + (kd * derivativa);
+    eroare_anterioara = eroare;
+
+}
+}
